@@ -114,11 +114,7 @@ console.log(isChatClicked,"isChaatttt")
       console.log(responseList, "Howdychamp", isFetching);
       chatContainerRef.current.scrollTop =
         chatContainerRef.current.scrollHeight;
-      console.log(
-        chatContainerRef.current.scrollTop,
-        "sheight",
-        chatContainerRef.current.scrollHeight
-      );
+   
     }
   }, [responseList]);
 
@@ -145,11 +141,9 @@ console.log(isChatClicked,"isChaatttt")
       handleSubmit(); // Call the function you want to run
     }
   };
-  console.log(selectedContract,"selelele")
 const handleContractChange=(e)=>{
   if (e){
     setSelectedContract(e.target.innerText)
-    console.log("fnrun",e.target.innerText)
 
   }
 }
@@ -163,7 +157,6 @@ const options = [
       <div className="chatContainer">
         <div
           className="inputContainer"
-          // style={{ display: isInputVisible ? "block" : "none" }}
         >
           <div style={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
 
