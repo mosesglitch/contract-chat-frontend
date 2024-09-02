@@ -1,7 +1,19 @@
 .App {
   text-align: center;
 }
-
+.navbar{
+  height: 40px;
+  background-color: lightblue;
+  text-align: left;
+  display: flex;
+  align-items: end;
+}
+.logo{
+  /* margin-top: 20px; */
+  font-weight: 700;
+  font-size:  20px;
+  margin-left: 10px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
