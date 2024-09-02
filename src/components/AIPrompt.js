@@ -8,11 +8,6 @@ import bot from "../images/bot.png";
 import { IoSendOutline } from "react-icons/io5";
 import { Dropdown } from 'semantic-ui-react'
 
-// import { HalfFloatType } from "three";
-import {
-ComboBox,
-ComboBoxItem,Icon
-} from "@ui5/webcomponents-react";
 function Aiprompt({isChatClicked}) {
   const [text, setText] = useState("");
   const [response, setResponse] = useState(null);
@@ -31,8 +26,7 @@ console.log(isChatClicked,"isChaatttt")
   },[isChatClicked])
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    console.log(selectedContract,"halloo")
+   console.log(selectedContract,"halloo")
     const response = await fetch(`/Contracts/${selectedContract}.pdf`);
     const blob = await response.blob();
     const file = new File([blob], `${selectedContract}.pdf`, { type: 'application/pdf' });
@@ -62,8 +56,7 @@ console.log(isChatClicked,"isChaatttt")
       formData.append('file', file);
       formData.append('jobDescription', text);
 
-      // Replace with your server endpoint
-      const res = await axios.post('https://contracts-chatter.onrender.com/query', formData, {
+     const res = await axios.post('https://contracts-chatter.onrender.com/query', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -83,9 +76,7 @@ console.log(isChatClicked,"isChaatttt")
       );
     } catch (error) {
       console.error("Error during fetch:", error);
-  
-      // Update the response list to show an error message
-      setResponseList((prevList) =>
+   setResponseList((prevList) =>
         prevList.map((item, index) =>
           index === currentIndex
             ? { ...item, response: `An error occurred: ${error.message}` }
@@ -176,19 +167,7 @@ const options = [
         >
           <div style={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
 
-          {/* <div
-            clasName="cancelButton"
-            onClick={() => setIsInputVisible(false)}
-            style={{ backgroundColor: "white",
-              border:"1px solid blue",
-              borderRadius:"3px",
-              width:"50%"
-             }}
-          >
-            Close chat
-          </div>
-       */}
-          <div
+   <div
           clasName="cancelButton"
           onClick={() => setIsInputVisible(false)}
           style={{ backgroundColor: " ",
